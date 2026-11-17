@@ -1,0 +1,31 @@
+F4 STUDIO — OFFLINE PACKAGE
+
+Windows without Node.js or npm:
+
+1. Extract this ZIP completely.
+2. Open windows-portable.
+3. Double-click F4 Studio.exe.
+
+This bundled Windows runtime includes Electron and the built F4 Studio app. Node.js, npm, and a development server are not required for regular use.
+
+Browser mode without Node.js:
+
+1. Extract this ZIP completely.
+2. Open offline-launcher.
+3. Double-click Open F4 Studio Browser.cmd.
+
+This starts a localhost-only PowerShell server and opens the browser build. Keep the window open while using the browser version; close it to stop the server.
+
+Linux:
+
+1. Extract this ZIP completely.
+2. Open offline-launcher in a terminal.
+3. Run: `python3 open-browser.py`
+
+The Linux launcher serves the same web-dist folder on localhost. Python 3 is used only as a local static server; F4 Studio itself remains a browser application.
+
+Android:
+
+Android cannot execute the Windows .exe, .cmd, or Linux launcher. Use the web-dist folder from this ZIP by uploading it to HTTPS hosting, then open that URL in Chrome and choose Install app / Add to Home screen. An APK will be a separate Android wrapper build.
+
+The web-dist folder is also suitable for HTTPS hosting/PWA deployment. Opening web-dist/index.html directly with file:// is not the supported full-feature route because modern browsers restrict ES modules, fetch, FFmpeg WASM, and service workers on file:// pages.

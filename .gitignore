@@ -1,0 +1,35 @@
+# Dependencies and package-manager caches
+node_modules/
+desktop/node_modules/
+.npm/
+.pnpm-store/
+.yarn/
+
+# Generated web and desktop builds
+dist/
+desktop/dist/
+.offline-package/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Local release archives and platform binaries
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.exe
+*.msix
+*.appx
+*.AppImage
+*.deb
+*.rpm
+*.apk
+
+# Logs, temporary files, and OS metadata
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+desktop/.icon-ico/

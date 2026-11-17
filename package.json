@@ -1,0 +1,54 @@
+{
+  "name": "f4-clip-editor",
+  "private": true,
+  "version": "0.1.0",
+  "description": "F4 Studio — local-first video editor and dedicated audio studio",
+  "author": "@f4did",
+  "license": "Apache-2.0",
+  "repository": { "type": "git", "url": "https://github.com/f4did/F4-Studio.git" },
+  "homepage": "https://github.com/f4did/F4-Studio#readme",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/prepare-ffmpeg-core.mjs && vite",
+    "build": "node scripts/prepare-rollup-wasm.mjs && node scripts/prepare-ffmpeg-core.mjs && tsc -b && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "typecheck:core": "tsc --noEmit -p tsconfig.core.json",
+    "test": "node scripts/run-tests.cjs",
+    "desktop": "npm run build && npm --prefix desktop install && npm --prefix desktop start",
+    "desktop:dist": "npm run build && npm --prefix desktop install && npm --prefix desktop run dist",
+    "desktop:portable": "npm run build && npm --prefix desktop install && npm --prefix desktop run dist:portable",
+    "desktop:store": "npm run build && npm --prefix desktop install && npm --prefix desktop run dist:store",
+    "desktop:linux": "npm run build && npm --prefix desktop install && npm --prefix desktop run dist:linux",
+    "package:offline": "npm run build && npm --prefix desktop install && npm --prefix desktop run dist:dir && powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/package-offline.ps1"
+  },
+  "dependencies": {
+    "@ffmpeg/core": "^0.12.6",
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "@ffmpeg/util": "^0.12.1",
+    "dexie": "^4.0.8",
+    "framer-motion": "^11.11.0",
+    "lamejs": "^1.2.1",
+    "lucide-react": "^0.454.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^5.0.0"
+  },
+  "devDependencies": {
+    "@rollup/wasm-node": "^4.68.3",
+    "@types/node": "^22.0.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true,
+    "esbuild@0.21.5": true
+  }
+}
